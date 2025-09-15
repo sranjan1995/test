@@ -1,0 +1,29 @@
+app:
+    name: aadhaarmasking-api
+    code: aadhaarmasking-API
+    notify: srswain@ecloudcontrol.com
+build:
+    version: 7.4
+    env: DEV
+    build_file: none
+    output_files: output/*.zip
+    image_template: aadhaarmasking-7.4
+    args:
+        BASE_IMAGE: "registry.pixl.ai/adhaar-masking:7.7.15"
+deploy:
+    context: alpha/DEV
+    resources: xx-large
+    replicas: 1
+    type: statefulset
+    port:
+    - 8000
+volumes:
+  - claim: aadhaarmasking-host
+    mount: 10.0.1.180:/data/nfs/9api
+    name: host
+    size: 50Gi
+    mode: ReadWriteOnce
+properties:
+    WORKERS : 1
+    revision : 0
+
