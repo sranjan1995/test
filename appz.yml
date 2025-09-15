@@ -19,6 +19,7 @@ deploy:
     - 8000
 volumes:
   - claim: aadhaarmasking-host
+    class: nfs-9api-sc
     mount: 10.0.1.180:/data/nfs/9api
     name: host
     size: 50Gi
