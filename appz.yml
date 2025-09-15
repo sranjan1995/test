@@ -18,12 +18,12 @@ deploy:
     port:
     - 8000
 volumes:
-  - claim: pvc-nfs-9api-test
-    #class: nfs-9api-sc
-    mount: /app/host
-    name: aadhaarmasking-host
+  - claim: aadhaarmasking-host
+    mount: /data/nfs/9api
+    name: host
     size: 50Gi
     mode: ReadWriteOnce
+
 properties:
     WORKERS : 1
     revision : 2
