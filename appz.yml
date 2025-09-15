@@ -14,7 +14,7 @@ deploy:
     context: sranjan1995/DEV
     resources: xx-large
     replicas: 1
-    type: statefulset
+    #type: statefulset
     port:
     - 8000
 volumes:
