@@ -25,5 +25,5 @@ volumes:
     mode: ReadWriteOnce
 properties:
     WORKERS : 1
-    revision : 1
+    revision : 2
 
