@@ -3,7 +3,7 @@ app:
     code: aadhaarmasking-API
     notify: srswain@ecloudcontrol.com
 build:
-    version: 7.4
+    version: 7.5
     env: DEV
     build_file: none
     output_files: output/*.zip
@@ -14,17 +14,17 @@ deploy:
     context: sranjan1995/DEV
     resources: xx-large
     replicas: 1
-    #type: statefulset
+    type: statefulset
     port:
     - 8000
 volumes:
-  - claim: pvc-nfs-9api
+  - claim: pvc-nfs-9api11
     mount: /app/host
-    name: pv-nfs-9api0
-    class: ""
+    name: pv-nfs-9api011
+    #class: ""
     size: 50Gi
     mode: ReadWriteOnce
-    matchLabels: false
+    #matchLabels: false
 
 properties:
     WORKERS : 1
